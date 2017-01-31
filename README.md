@@ -1,36 +1,46 @@
-# FlickrFetcher
+# Flickr fetcher App.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flickr_fetcher`. To experiment with that code, run `bin/console` for an interactive prompt.
+## App. requirements
 
-TODO: Delete this and the text above, and describe your gem
+Write a Ruby command line application that
+
+* accepts a list of search keywords as arguments
+* queries the Flickr API for the top-rated (term: interestingness) image for each keyword
+* downloads the results
+* crops them rectangularly
+* assembles a collage grid from ten images and
+* writes the result to a user-supplied filename
+* host your code repository on github or bitbucket
+
+If given less than ten keywords, or if any keyword fails to
+result in a match, retrieve random words from a dictionary
+source such as `/usr/share/dict/words`. Repeat as necessary
+until you have gathered ten images.
+
+Be careful and conservative in your handling of files and
+other IO. Bonus points for wrapping the application in a
+Gem. Please include a README with instructions on how to
+install and run your application.
+
+Hint: You're free to use any existing Gem which helps you to
+get the challenge done.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'flickr_fetcher'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install flickr_fetcher
+gem install flickr_fetcher
 
 ## Usage
+flickr_search keywords filename
+ 
+If not keywords or filename are given, it will use the dictionary and the output filename will be collage.jpg
 
-TODO: Write usage instructions here
+The last argument is the name of the jpeg image, an .jpg extension will be added to this name.
 
-## Development
+Example:
+flickr_search art music dance sunset collage-image
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## License
 
-## Contributing
+Source code released under the [GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.html) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. Docs released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/rasg/flickr_fetcher.
-
+[![GPL V3](http://www.gnu.org/graphics/gplv3-88x31.png)](http://www.gnu.org/licenses/gpl-3.0.html) [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
